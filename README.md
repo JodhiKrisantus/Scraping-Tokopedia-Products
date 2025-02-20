@@ -30,32 +30,8 @@ Update the `create_engine` line in the script with your PostgreSQL credentials:
 ```python
 engine = create_engine('postgresql://postgres:*Your_Database_Password*@localhost:5432/DIY')
 ```
-Replace `*Your_Database_Password*` with your actual database password.
-
-## Code Explanation
-
-### Selenium WebDriver Setup
-The script configures Chrome options for a smoother browsing experience:
-```python
-option = Options()
-option.add_argument("--disable-infobars")
-option.add_argument("start-maximized")
-option.add_argument("--disable-extensions")
-option.add_experimental_option(
-    "prefs", {"profile.default_content_setting_values.notifications": 1}
-)
-
-driver = webdriver.Chrome(options=option, service=ChromeService())
-```
-
-### Database Connection
-A connection to PostgreSQL is established using SQLAlchemy:
-```python
-from sqlalchemy import create_engine
-engine = create_engine('postgresql://postgres:*Your_Database_Password*@localhost:5432/DIY')
-```
-
 ## Notes
+- Replace `*Your_Database_Password*` with your actual database password.
 - Make sure your PostgreSQL server is running and the 'DIY' database is created.
 - Always keep your database credentials secure. Consider using environment variables or a config file.
 
